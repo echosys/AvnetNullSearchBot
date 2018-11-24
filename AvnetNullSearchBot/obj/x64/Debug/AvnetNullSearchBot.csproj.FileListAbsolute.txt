@@ -6,12 +6,9 @@ C:\Users\tjarman\Source\Repos\AvnetNullSearchBot\AvnetNullSearchBot\bin\Debug\Do
 C:\Users\tjarman\Source\Repos\AvnetNullSearchBot\AvnetNullSearchBot\bin\Debug\NetLegacySupport.Tuple.dll
 C:\Users\tjarman\Source\Repos\AvnetNullSearchBot\AvnetNullSearchBot\bin\Debug\System.Diagnostics.DiagnosticSource.dll
 C:\Users\tjarman\Source\Repos\AvnetNullSearchBot\AvnetNullSearchBot\bin\Debug\System.IO.Packaging.dll
-C:\Users\tjarman\Source\Repos\AvnetNullSearchBot\AvnetNullSearchBot\bin\Debug\WebDriver.dll
-C:\Users\tjarman\Source\Repos\AvnetNullSearchBot\AvnetNullSearchBot\bin\Debug\WebDriverManager.dll
 C:\Users\tjarman\Source\Repos\AvnetNullSearchBot\AvnetNullSearchBot\bin\Debug\AngleSharp.xml
 C:\Users\tjarman\Source\Repos\AvnetNullSearchBot\AvnetNullSearchBot\bin\Debug\DocumentFormat.OpenXml.xml
 C:\Users\tjarman\Source\Repos\AvnetNullSearchBot\AvnetNullSearchBot\bin\Debug\System.Diagnostics.DiagnosticSource.xml
-C:\Users\tjarman\Source\Repos\AvnetNullSearchBot\AvnetNullSearchBot\bin\Debug\WebDriver.xml
 C:\Users\tjarman\Source\Repos\AvnetNullSearchBot\AvnetNullSearchBot\obj\x64\Debug\AvnetNullSearchBot.csprojAssemblyReference.cache
 C:\Users\tjarman\Source\Repos\AvnetNullSearchBot\AvnetNullSearchBot\obj\x64\Debug\AvnetNullSearchBot.Form1.resources
 C:\Users\tjarman\Source\Repos\AvnetNullSearchBot\AvnetNullSearchBot\obj\x64\Debug\AvnetNullSearchBot.Properties.Resources.resources

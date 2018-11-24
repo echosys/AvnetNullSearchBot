@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AvnetNullSearchBot.exe" size="14760">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AvnetNullSearchBot.exe" size="17320">
       <assemblyIdentity name="AvnetNullSearchBot" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>vTZXVTCZBmYWhDJYDVA8gAWsB759qPgoStqK1whvpGE=</dsig:DigestValue>
+        <dsig:DigestValue>e7FZ5E5IlS8M7ekh/Qym6iihZSM0TyW/PpAL0qDuzLI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

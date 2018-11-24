@@ -29,7 +29,11 @@ namespace AvnetNullSearchBot
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            List<RegionSelector> regions = new List<RegionSelector>();
+            regions.Add(new RegionSelector("715839035", "US"));;
+            regions.Add(new RegionSelector("715839038", "APAC"));
+            regions.Add(new RegionSelector("10151", "EMEA"));
+            regionSelectorBindingSource.DataSource = regions;
         }
         private List<string> results = new List<string>();
         private List<string> searchTerms = new List<string>();
@@ -134,6 +138,10 @@ namespace AvnetNullSearchBot
             m_ExcelSheet = openFileDialog1.FileName;
             searchTerms = GetTerms(m_ExcelSheet);
             //searchTerms = new List<string>() { "dogfood" };
+            progressBar.Minimum = 0;
+            progressBar.Maximum = searchTerms.Count();
+            progressBar.Value = 1;
+            progressBar.Step = 1;
             TriggerNextEvent();
         }
 
@@ -162,11 +170,15 @@ namespace AvnetNullSearchBot
                 string nextTerm = searchTerms.ElementAt(searchCounter);
                 try
                 {
-                    
-                    string url = $"https://www.avnet.com/shop/SearchDisplay?searchTerm={nextTerm}";
-                    //webBrowser1.ScriptErrorsSuppressed = true;
+                    nextTerm = Uri.EscapeDataString(nextTerm);
+                    RegionSelector region = regionComboBox.SelectedItem as RegionSelector;
+                    string storeId = region.StoreId;
+                    string url = $"https://www.avnet.com/shop/SearchDisplay?searchTerm={nextTerm}&storeId={storeId}";
+                    webBrowser1.ScriptErrorsSuppressed = true;
                     //GetWebPage(url);
                     webBrowser1.Navigate(url, "_self", null, "Referer: Avnet-ASU-BOT");
+                    progressBar.PerformStep();
+                    progressLabel.Text = $"{searchCounter} of {searchTerms.Count}";
                     Application.DoEvents();
                 }
                 catch (Exception e)
@@ -263,13 +275,15 @@ namespace AvnetNullSearchBot
 
         private static Row GetRow(Worksheet worksheet, uint rowIndex)
         {
-            return worksheet.GetFirstChild<SheetData>().
-              Elements<Row>().Where(r => r.RowIndex == rowIndex).First();
-        }
-
-        private void webBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
-        {
-            int x = 3;
+            Row row =  worksheet.GetFirstChild<SheetData>().
+              Elements<Row>().Where(r => r.RowIndex == rowIndex).FirstOrDefault();
+            if (row == null)
+            {
+                row = new Row();
+                row.RowIndex = rowIndex;
+                worksheet.GetFirstChild<SheetData>().Append(row);
+            }
+            return row;
         }
     }
 }
